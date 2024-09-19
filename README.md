@@ -19,42 +19,51 @@ Key analytical questions driving the project include:
 ![image](https://github.com/user-attachments/assets/e6f8f460-7dd7-463c-a2a4-2ba59a483269)
 
 ### 3. Storage Design
-To efficiently handle data storage, AWS S3 was utilized with the following structure:
+The storage design phase involves setting up a system to efficiently store and manage the data. 
 - **Raw Bucket**: Stores raw, unprocessed data.
 - **Staging Bucket**: Holds preliminary processed data after basic cleaning.
 - **Curated Bucket**: Contains final cleaned and transformed data, ready for analysis. 
- ![image](https://github.com/user-attachments/assets/e4be7bc0-21cc-42db-8a2b-7127056128ae)
+ ![image](https://github.com/user-attachments/assets/3286dd09-d2c7-45de-9c0e-a85568d611a7)
+
 ### 4. Data Preparation
-- AWS DataBrew was employed to clean and standardize the data by removing null values, correcting data formats, and eliminating unnecessary data points.
-![image](https://github.com/user-attachments/assets/948612a0-40f2-4b91-af27-9afa83b85e5a)
+- AWS DataBrew was employed to cleaning and transforming the data to ensure  that there is no null values, correcting data formats, and eliminating unnecessary data points.
+![image](https://github.com/user-attachments/assets/1f4ed4d5-e308-46aa-b69d-060075fb3b5a)
+
 ### 5. Data Injection
-- Once cleaned, the data was ingested into the S3 Raw bucket for storage and further processing.
-![image](https://github.com/user-attachments/assets/7c5369a9-f0fd-48e2-b619-968588a499b0)
+- Once cleaned, the cleaned data is transferred into the designated storage location, such as a raw data bucket for further processing.
+![image](https://github.com/user-attachments/assets/d27b45fa-350f-40c2-ba54-21ac2f280c22)
+
 ### 6. Data Pipeline Design
-- AWS Glue was used to create the data pipeline, automating the ETL (Extract, Transform, Load) process.
-- The pipeline ensured the smooth flow of data from storage to processing and transformation. 
-![image](https://github.com/user-attachments/assets/d24b74ba-d0c0-4187-8d99-545641440b6e)
+- AWS Glue is used to create the data pipeline, automating the ETL process.
+- The data pipeline is designed to facilitate the smooth flow and transformation of data throughout the system.
+![image](https://github.com/user-attachments/assets/7920194e-3cf5-45d2-8f8a-7e0cfde1d526)
+
 ### 7. Data Cleaning
-- AWS DataBrew was again used for in-depth data cleaning, ensuring that the data conformed to necessary formats and was free of null or incomplete entries. 
-![image](https://github.com/user-attachments/assets/21321062-ef43-4f8d-ba78-0bcde00bbeab)
+- Data cleaning involves removing any inconsistencies or errors in the data to improve its quality. and was free of null or incomplete entries. 
+![image](https://github.com/user-attachments/assets/dbb801a1-dfe5-48f6-b45f-d1a360ca930b)
+
 ### 8. Data Structuring
-- The data was restructured according to department and monthly trends, which enabled more focused analysis and answered the key analytical questions. 
-![image](https://github.com/user-attachments/assets/87944ecf-44be-45dc-92a5-94690fb62cf0)
+- Data is organized in a way that aligns with the analytical questions being addressed, making it easier to analyze.
+![image](https://github.com/user-attachments/assets/cadee02f-bfd7-4abd-bbb6-e540c29993d8)
+
 ### 9. Data Pipeline Implementation
-- AWS Glue Jobs were set up to ensure the data was properly transformed and loaded into the final S3 Curated bucket for analysis. 
-![image](https://github.com/user-attachments/assets/c8fc0239-628c-4be9-a8c5-8b14a16f49a2)
+- AWS Glue Jobs were set up to ensure the data was properly transformed and loaded into the final S3 Curated bucket for analysis.
+- The data pipeline is implemented to ensure data is processed and loaded correctly, using tools like AWS Glue.
+![image](https://github.com/user-attachments/assets/33f5b481-cd4a-4506-94e4-7e2a2a84317a)
+![image](https://github.com/user-attachments/assets/0162ae05-d76f-4ed0-946c-b267f3bac78f)
+
 ### 10. Data Analysis
 - AWS Athena was utilized to execute SQL queries on the structured data. An example query used in the project is:
-```sql
-SELECT * FROM "vancouver_water_permits"."issued_operating_permits";
-```
-- This query helped retrieve information on permits, categorized by department, for the years 2024 and 2025. 
-![image](https://github.com/user-attachments/assets/84ed5433-741f-4bc4-a9da-3f8461037bb7)
+![image](https://github.com/user-attachments/assets/1715ff90-b443-4141-8bbb-3588589cb12c)
+- This query helped retrieve information on found animal differnece in 2023 and 2024
+
 ### 11. Data Visualization
-- Data on the number of permits issued per department for 2024 and 2025 was visualized to provide insights into how resources were allocated and how water system performance was monitored over time.
+- Based on the output data recorded from the table created a data visualization where it show the difference in the year the number of found animal in year 2024 and 2023.
+![image](https://github.com/user-attachments/assets/5d49a1be-057f-499d-91eb-031dc3c793c1)
 ### 12. Data Publishing
-- An AWS EC2 instance was deployed to publish the analysis results, providing remote access for stakeholders to view and interact with the data. 
-![image](https://github.com/user-attachments/assets/5969a0f5-6a03-43c9-a38e-1576cef61ded)
+- The final step involves publishing the analysis results, making them accessible to stakeholders through a server setup like AWS EC2. This rewritten version maintains the original content's meaning while using different wording and structure.
+![image](https://github.com/user-attachments/assets/2b9c68de-290c-4a65-b5ac-80fe67a138c7)
+
 
 
 
