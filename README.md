@@ -16,35 +16,38 @@ Key analytical questions driving the project include:
 - Which breeds or colours are most commonly reported as lost or found?
 ### 2. Data Discovery
 - The data is sourced from external datasets. For example, the dataset for animal control inventory lost and found is accessed via an open data portal. This involves identifying and accessing relevant datasets that will be used for analysis.
-![image](https://github.com/user-attachments/assets/e6f8f460-7dd7-463c-a2a4-2ba59a483269)
+![Screenshot 2024-08-23 151933](https://github.com/user-attachments/assets/af3367e1-e511-4357-b16f-02047df47c06)
 
 ### 3. Storage Design
 The storage design phase involves setting up a system to efficiently store and manage the data. 
 - **Raw Bucket**: Stores raw, unprocessed data.
 - **Staging Bucket**: Holds preliminary processed data after basic cleaning.
 - **Curated Bucket**: Contains final cleaned and transformed data, ready for analysis. 
- ![image](https://github.com/user-attachments/assets/3286dd09-d2c7-45de-9c0e-a85568d611a7)
+![Screenshot 2024-08-23 152757](https://github.com/user-attachments/assets/3b65d36f-f35b-4991-bb20-a43e420f5ecf)
 
 ### 4. Data Preparation
 - AWS DataBrew was employed to cleaning and transforming the data to ensure  that there is no null values, correcting data formats, and eliminating unnecessary data points.
-![image](https://github.com/user-attachments/assets/1f4ed4d5-e308-46aa-b69d-060075fb3b5a)
+![databrew project creation](https://github.com/user-attachments/assets/ff1a64b0-0503-4f3a-bd96-23053af83f96)
+
 
 ### 5. Data Injection
 - Once cleaned, the cleaned data is transferred into the designated storage location, such as a raw data bucket for further processing.
-![image](https://github.com/user-attachments/assets/d27b45fa-350f-40c2-ba54-21ac2f280c22)
+![raw job output for  2024](https://github.com/user-attachments/assets/58abb425-d4d6-4572-b531-2f47d6e6bd88)
+![raw job output for  2023](https://github.com/user-attachments/assets/ca504498-9b47-43dd-9d9f-0c7be3397cdd)
+
 
 ### 6. Data Pipeline Design
 - AWS Glue is used to create the data pipeline, automating the ETL process.
 - The data pipeline is designed to facilitate the smooth flow and transformation of data throughout the system.
-![image](https://github.com/user-attachments/assets/7920194e-3cf5-45d2-8f8a-7e0cfde1d526)
+![ETL](https://github.com/user-attachments/assets/38404349-da8e-4234-8140-73577f838f5e)
 
 ### 7. Data Cleaning
 - Data cleaning involves removing any inconsistencies or errors in the data to improve its quality. and was free of null or incomplete entries. 
-![image](https://github.com/user-attachments/assets/dbb801a1-dfe5-48f6-b45f-d1a360ca930b)
+![Screenshot 2024-08-23 153336](https://github.com/user-attachments/assets/973bff0b-8e64-4b4c-b58b-be2bcd285d22)
 
 ### 8. Data Structuring
 - Data is organized in a way that aligns with the analytical questions being addressed, making it easier to analyze.
-![image](https://github.com/user-attachments/assets/cadee02f-bfd7-4abd-bbb6-e540c29993d8)
+![Screenshot 2024-08-23 150716](https://github.com/user-attachments/assets/f73d8421-7f52-44a0-aa5c-3c3c9fe1fe79)
 
 ### 9. Data Pipeline Implementation
 - AWS Glue Jobs were set up to ensure the data was properly transformed and loaded into the final S3 Curated bucket for analysis.
@@ -54,7 +57,8 @@ The storage design phase involves setting up a system to efficiently store and m
 
 ### 10. Data Analysis
 - AWS Athena was utilized to execute SQL queries on the structured data. An example query used in the project is:
-![image](https://github.com/user-attachments/assets/1715ff90-b443-4141-8bbb-3588589cb12c)
+![Querry](https://github.com/user-attachments/assets/c4aa7940-2e9c-4df2-acf0-547e448b943d)
+
 - This query helped retrieve information on found animal differnece in 2023 and 2024
 
 ### 11. Data Visualization
