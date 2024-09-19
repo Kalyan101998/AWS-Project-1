@@ -1,4 +1,4 @@
-<h1 align="center">AWS Project 2</h1>
+<h1 align="center">AWS Project 1</h1>
 
 
 # Project Description: Implementation and Analysis of Safety-Issued Operating Permits Using AWS
